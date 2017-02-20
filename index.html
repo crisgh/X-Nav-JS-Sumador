@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+   <head>
+     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+     <title>JS-Sumador</title>
+     <h1> Sumador simple ejercicio 5.5.6</h1>
+
+         <script type="text/javascript" charset="utf-8">
+           function sumar(op,res){
+             var operacion = document.getElementById(op);
+             var operandos = operacion.innerHTML.split("+");
+             var result = document.getElementById(res);
+             var suma = parseInt(operandos[0]) + parseInt(operandos[1]);
+             result.innerHTML = "=" + suma;
+           }
+
+           function newAdd(op){
+             var valor1 = Math.round(Math.random()*100);
+             var valor2 = Math.round(Math.random()*500);
+             var newOperacion = valor1 + '+' + valor2;
+             var operacion = document.getElementById(op);
+             operacion.innerHTML = newOperacion;
+           }
+     </script>
+   </head>
+   <body>
+     <p>Adder... <span id='op'>5+3</span> <span id='result'></span> <a href="javascript:sumar('op', 'result')">Add!</a></p>
+     <p><a href="javascript:newAdd('op')">New Add!</a></p>
+   </body>
+</html>
